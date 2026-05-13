@@ -1,7 +1,14 @@
 .env
-data/input/
-data/raw_extractions.csv
-data/normalized_consumption.csv
+data/input/*
+!data/input/.gitkeep
+data/stage1/*
+!data/stage1/.gitkeep
+data/stage2/*
+!data/stage2/.gitkeep
+data/stage3/*
+!data/stage3/.gitkeep
+data/output/*
+!data/output/.gitkeep
 logs/
 __pycache__/
 *.pyc

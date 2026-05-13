@@ -15,3 +15,13 @@ Claude voegt hier elke nieuwe beslissing aan toe met datum.
 - Rapport: Word in Bopro-huisstijl via python-docx
 - Deployment: lokaal-first, deployment-ready architectuur
 - Configuratie: via .env, nooit hardcoded
+
+---
+
+## 2026-05-13 — Herstructurering data/-map
+
+- data/ opgesplitst in stage-mappen per verwerkingsstap (stage1, stage2, stage3, output)
+- Elke agent leest uit de vorige stage-map en schrijft naar zijn eigen map
+- data/stage3/ gebruikt JSON (geen CSV): gestructureerde berekeningsresultaten die door stap 4 en 5 verder verwerkt worden
+- data/input/ wordt nooit overschreven of gewijzigd door een agent
+- data/output/ bevat uitsluitend het eindrapport (Word)
