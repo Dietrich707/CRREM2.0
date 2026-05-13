@@ -1,0 +1,17 @@
+# Beslissingenlog CRREM 2.0
+
+Chronologisch log van alle architectuurbeslissingen en afspraken.
+Claude voegt hier elke nieuwe beslissing aan toe met datum.
+
+---
+
+## 2026-05-13 — Project initialisatie
+
+- Webapp-stack: Streamlit
+- Agents: Claude API via anthropic SDK, geen apart agent-framework
+- Tussenformaat stap 1→2: CSV met vast schema
+- Interpolatie: conform CRREM-methodologie voor ontbrekende maanden
+- Niet-interpoleerbare periodes: flaggen en melden, nooit stilzwijgend oplossen
+- Rapport: Word in Bopro-huisstijl via python-docx
+- Deployment: lokaal-first, deployment-ready architectuur
+- Configuratie: via .env, nooit hardcoded

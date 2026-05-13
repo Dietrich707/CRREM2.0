@@ -1,0 +1,8 @@
+.env
+data/input/
+data/raw_extractions.csv
+data/normalized_consumption.csv
+logs/
+__pycache__/
+*.pyc
+.DS_Store
