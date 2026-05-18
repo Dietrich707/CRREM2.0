@@ -25,3 +25,17 @@ Claude voegt hier elke nieuwe beslissing aan toe met datum.
 - data/stage3/ gebruikt JSON (geen CSV): gestructureerde berekeningsresultaten die door stap 4 en 5 verder verwerkt worden
 - data/input/ wordt nooit overschreven of gewijzigd door een agent
 - data/output/ bevat uitsluitend het eindrapport (Word)
+
+---
+
+## 2026-05-18 — Implementatie stap 3: generieke CRREM berekeningsengine
+
+- Engine (engine/crrem.py) is volledig generiek: geen hardcoded land/gebruik/scenario-data
+- Pathway- en emissiefactordata gescheiden in JSON-bestanden onder data/crrem_pathways/
+- JSON-bestanden aangemaakt als lege structuur — te vullen vanuit CRREM Excel V2.04
+- Interpolatie: lineair, jaar-voor-jaar 2020-2050 (nooit 5-jaarsprongen)
+- Twee onafhankelijke strandingpunten: energie (EUI) en CO2
+- EUI = site-eindenergie (eindenergie), niet primaire energie; on-site hernieuwbaar telt mee voor EUI met EF = 0
+- Emissiefactoren: location-based, excl. T&D-verliezen voor elektriciteit (conform CRREM V2.0 + SBTi)
+- DataNietBeschikbaar-exceptie bij ontbrekende of null-waarden — nooit stilzwijgend doorgaan
+- Pad naar JSON-bestanden instelbaar via env-variabele CRREM_DATA_PATH

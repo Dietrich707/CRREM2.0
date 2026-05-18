@@ -12,12 +12,16 @@ crrem2/
 │   ├── stage1/             # output stap 1: raw_extractions.csv
 │   ├── stage2/             # output stap 2: normalized_consumption.csv
 │   ├── stage3/             # output stap 3: crrem_results.json
-│   └── output/             # eindrapport Word-bestand
+│   ├── output/             # eindrapport Word-bestand
+│   └── crrem_pathways/     # pathway- en emissiefactordata (JSON, te vullen vanuit CRREM Excel V2.04)
+│       ├── pathways.json
+│       └── emission_factors.json
 ├── agents/
 │   ├── extractor.py        # stap 1
 │   └── normalizer.py       # stap 2
 ├── engine/
-│   ├── crrem.py            # stap 3
+│   ├── crrem.py            # stap 3 — berekeningsengine, geen landdata
+│   ├── pathway_data.py     # stap 3 — laadt pathway- en emissiefactordata uit JSON
 │   └── measures.py         # stap 4 + 5
 ├── report/
 │   └── generator.py        # stap 6
